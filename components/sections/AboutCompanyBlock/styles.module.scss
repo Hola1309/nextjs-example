@@ -1,0 +1,345 @@
+@use 'styles/common' as *;
+@use 'styles/common/variables' as *;
+
+.AboutCompanyBlock {
+  &__linkWrapp {
+    display: flex;
+    @include breakpoint('verticalTablet', true) {
+      font-size: 18px;
+    }
+  }
+  &__index {
+    padding-right: 40px;
+  }
+  @include breakpoint('notebookBig', true) {
+  }
+
+  &__titleWrap {
+    border-bottom: 1px solid color('grey80');
+    @include breakpoint('phone', true) {
+      margin-left: 16px;
+      margin-right: 16px;
+    }
+  }
+
+  &__title {
+    padding-bottom: 24px;
+    @include font($size: $fontSize-2 * 1.2, $weight: 600, $height: $lineHeight-5);
+    text-transform: uppercase;
+    cursor: default;
+    @include breakpoint('notebookBig', true) {
+      font-size: $fontSize-2;
+    }
+    @include breakpoint('verticalTablet', true) {
+      font-size: 32px;
+    }
+    @include breakpoint('phone', true) {
+      font-size: $fontSize-4;
+      padding-bottom: 16px;
+    }
+  }
+
+  &__contentWrap {
+    border-top: 1px solid color('grey80');
+    border-bottom: 1px solid color('grey80');
+    @include breakpoint('verticalTablet', true) {
+      flex-direction: column;
+    }
+    @include breakpoint('phone', true) {
+      margin-left: 16px;
+      margin-right: 16px;
+    }
+  }
+
+  &__content {
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+    margin-top: 56px;
+
+    &:first-child {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: unset;
+    }
+
+    &:nth-child(2) {
+      display: flex;
+      width: unset;
+    }
+
+    &:nth-child(3) {
+      display: flex;
+      width: unset;
+    }
+
+    &:last-child {
+      width: unset;
+      display: flex;
+    }
+    @include breakpoint('phone', true) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-bottom-width: 0px;
+      margin-top: 0px;
+      &:first-child {
+        border-bottom-width: 0px;
+      }
+      &:nth-child(2) {
+        margin-top: 36px;
+      }
+      &:nth-child(3) {
+        margin-top: 24px;
+      }
+    }
+  }
+
+  &__sliderBlock {
+    width: 48.419%;
+    @include breakpoint('phone', true) {
+      display: none;
+    }
+  }
+
+  &__descriptionBlock {
+    @include breakpoint('phone', true) {
+      width: auto;
+    }
+  }
+
+  &__textWrap {
+    padding-top: 32px;
+    margin-top: 16px;
+    padding-bottom: 32px;
+    margin-bottom: 16px;
+    width: 33.3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid color('grey20');
+
+    &:nth-child(3n) {
+      border-right: none;
+    }
+    @include breakpoint('verticalTablet', true) {
+      flex-direction: column;
+      text-align: center;
+      justify-content: flex-start;
+    }
+    @include breakpoint('phone', true) {
+      flex-direction: column;
+      width: 100%;
+      border-right-width: 0px;
+      border-bottom: 1px solid color('grey20');
+      margin: 0px;
+      padding-top: 24px;
+      padding-top: 24px;
+    }
+  }
+
+  &__fact {
+    max-width: 50%;
+    @include breakpoint('verticalTablet', true) {
+      max-width: 90%;
+    }
+    @include breakpoint('phone', true) {
+      text-align: center;
+      margin-top: 12px;
+      max-width: 222px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 36px;
+    max-width: 660px;
+    cursor: default;
+    margin-left: 40px;
+    white-space: pre-line;
+    @include breakpoint('verticalTablet', true) {
+      font-size: 16px;
+      width: 50%;
+    }
+    @include breakpoint('phone', true) {
+      width: 100%;
+      margin-left: 0px;
+      margin-top: 24px;
+      font-size: $fontSize-8 * 1.2;
+    }
+  }
+
+  &__numberWrap {
+    margin-right: 24px;
+    @include breakpoint('verticalTablet', true) {
+      margin-right: 0px;
+    }
+    @include breakpoint('phone', true) {
+      margin-right: 0px;
+    }
+  }
+
+  &__number {
+    position: relative;
+    color: color('grey80');
+    @include font($size: $fontSize-3 * 1.2, $weight: 600, $height: $lineHeight-5);
+
+    @include breakpoint('notebookBig', true) {
+      font-size: $fontSize-3;
+    }
+  }
+
+  &__underline {
+    display: block;
+    width: auto;
+    height: 3px;
+    background: color('red');
+  }
+
+  &__items {
+    overflow: hidden;
+  }
+
+  &__itemsWrap {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  &__item {
+    width: 100%;
+    border-top: 0;
+    border-right: none;
+    border-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  &__textImageWrap {
+    position: relative;
+    width: 50%;
+
+    &:before {
+      display: block;
+      padding-top: 66.123%;
+      content: '';
+    }
+    @include breakpoint('phone', true) {
+      width: 100%;
+      object-fit: cover;
+      height: 328px;
+    }
+  }
+  &__imageWrap {
+    position: relative;
+    width: 100%;
+
+    &:before {
+      display: block;
+      padding-top: 66.123%;
+      content: '';
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__linkWrap {
+    width: 50%;
+    margin-right: 40px;
+    @include breakpoint('phone', true) {
+      width: 100%;
+      margin-right: 0px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 0;
+    border-bottom: 1px solid color('grey20');
+    cursor: pointer;
+    @include font($size: $fontSize-5 * 1.2, $weight: 600, $height: $lineHeight-2);
+
+    @include breakpoint('notebookBig', true) {
+      font-size: $fontSize-5;
+    }
+
+    &:first-child {
+      border-top: 1px solid color('grey20');
+    }
+
+    transition: transform $duration;
+
+    &:hover {
+      color: color('blue');
+      transform: scale(0.99, 1);
+      transform-origin: left right;
+    }
+
+    &:hover > .AboutCompanyBlock__index {
+      margin-left: 20px;
+    }
+
+    &:hover > .AboutCompanyBlock__arrowSingle {
+      margin-right: 20px;
+      svg > path {
+        fill: color('blue');
+      }
+    }
+  }
+
+  &__navigationWrap {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 0 24px;
+  }
+
+  &__navigation {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    &_currentSlide {
+      @include font($size: $fontSize-5, $weight: 600, $height: $lineHeight-1);
+      color: color('primary');
+    }
+
+    &_allSlides {
+      @include font($size: $fontSize-5, $weight: 600, $height: $lineHeight-1);
+      color: color('grey40');
+    }
+  }
+
+  &__arrowWrap {
+    display: flex;
+  }
+
+  &__arrow {
+    &_next {
+      margin-right: -4px;
+    }
+
+    &_disabled {
+      color: color('grey20');
+
+      &:hover {
+        color: color('grey20');
+      }
+    }
+  }
+
+  &__iconsWrap {
+    margin-right: 22px;
+  }
+
+  &__buttonWrapper {
+    display: flex;
+    cursor: pointer;
+    max-width: 360px;
+  }
+}

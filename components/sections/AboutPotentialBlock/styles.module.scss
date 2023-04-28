@@ -1,0 +1,330 @@
+@use 'styles/common' as *;
+@use 'styles/common/variables' as *;
+
+.AboutPotentialBlock {
+
+  @include breakpoint('notebookBig', true) {
+  }
+
+  &__titleWrap {
+    max-width: 427px;
+    @include breakpoint('verticalTablet', true) {
+      max-width: 530px;
+    }
+  }
+
+  &__title {
+    padding-bottom: 40px;
+    @include font($size: $fontSize-2 * 1.2, $weight: 600, $height: $lineHeight-5);
+    text-transform: uppercase;
+    cursor: default;
+
+    @include breakpoint('notebookBig', true) {
+      font-size: $fontSize-2;
+    }
+    @include breakpoint('verticalTablet', true) {
+      font-size: 32px;
+    }
+    @include breakpoint('phone', true) {
+      font-size: $fontSize-4;
+    }
+  }
+
+  &__contentWrap {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__content {
+    &:first-child {
+      display: flex;
+      justify-content: space-between;
+    }
+    @include breakpoint('verticalTablet', true) {
+      flex-direction: column;
+    }
+    @include breakpoint('phone', true) {
+      &:first-child {
+        flex-direction: column;
+
+        margin-right: 16px;
+        margin-left: 16px;
+      }
+      &:nth-child(2) {
+        margin-right: 16px;
+        margin-left: 16px;
+      }
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    margin-top: 0 !important;
+    padding-bottom: 7px;
+    border-bottom: 1px solid color('grey20');
+  }
+
+  &__tabsWrap {
+    margin-right: 56px;
+    margin-top: 0 !important;
+  }
+
+  &__tabContent {
+    margin-top: 40px;
+  }
+
+  &__itemsWrap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 32px;
+    border-bottom: 1px solid color('grey80');
+  }
+
+  &__item {
+    width: 20.726%;
+    padding-bottom: $spacerHeight-6;
+    border-top: 0;
+    border-bottom: 0;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+  }
+
+  &__imageWrap {
+    width: 100%;
+    position: relative;
+    display: inline-flex;
+    transition: duration 400ms;
+    cursor: pointer;
+    &:hover > .MainAboutBlock__imageTop {
+      display: inline-flex;
+    }
+    &:hover > .MainAboutBlock__image {
+      display: none;
+    }
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__imageTop {
+    display: none;
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    z-index: 10;
+
+    @include breakpoint('mediumScreen', true) {
+      top: -20px;
+      left: 5px;
+    }
+
+    @include breakpoint('notebookBig', true) {
+      top: -20px;
+      left: -4px;
+    }
+  }
+
+  &__achievements {
+    overflow: hidden;
+  }
+
+  &__achievementsWrap {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  &__achievement {
+    margin-right: 40px;
+    width: 22.763%;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    @include breakpoint('verticalTablet', true) {
+      width: 30%;
+    }
+    @include breakpoint('phone', true) {
+      width: 66%;
+      padding-right: 16px;
+      margin-right: 0px;
+    }
+  }
+
+  &__achievementImageWrap {
+    position: relative;
+    width: 100%;
+  }
+
+  &__achievementImage {
+    width: 100%;
+    display: block;
+  }
+
+  &__achievementButtonWrap {
+    padding-bottom: 7px;
+    margin-top: auto;
+  }
+
+  &__navigationBlock {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+  }
+
+  &__navigation {
+    display: none;
+  }
+
+  &__navigationTitleWrap {
+    margin-bottom: 24px;
+  }
+
+  &__navigationTitle {
+    @include font($size: $fontSize-5 * 1.2, $weight: 600, $height: $lineHeight-2);
+
+    @include breakpoint('notebookBig', true) {
+      font-size: $fontSize-5;
+    }
+  }
+
+  &__arrowWrap {
+    display: flex;
+    @include breakpoint('verticalTablet', true) {
+      display: none;
+    }
+    @include breakpoint('phone', true) {
+      display: none;
+    }
+  }
+
+  &__description {
+    text-indent: 22px;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 135%;
+    margin-bottom: 40px;
+    text-align: justify;
+    text-indent: 24px;
+    white-space: pre-wrap;
+    font-size: $fontSize-6 * 1.2;
+    cursor: default;
+    @include breakpoint('notebookBig') {
+      font-size: $fontSize-6;
+    }
+    @include breakpoint('verticalTablet', true) {
+      max-width: unset;
+    }
+  }
+
+  &__achievementDescription {
+    margin-top: 20px;
+    margin-bottom: 24px;
+    max-width: 561px;
+    cursor: default;
+    @include font($size: $fontSize-7 * 1.2, $weight: 600, $height: $lineHeight-4);
+
+    @include breakpoint('notebookBig', true) {
+      font-size: $fontSize-7;
+    }
+  }
+
+  &__tabs {
+    margin-top: 40px;
+  }
+
+  &__tabsWrap {
+    margin-top: 32px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    max-width: 306px;
+    @include breakpoint('notebookBig', true) {
+      max-width: 249px;
+    }
+
+    button {
+      @include font($size: $fontSize-5 * 1.2, $weight: 600, $height: $lineHeight-2);
+
+      &:after {
+        height: 2px;
+        top: 39px;
+      }
+
+      @include breakpoint('notebookBig', true) {
+        font-size: $fontSize-5;
+
+        &:after {
+          top: 35px;
+        }
+      }
+    }
+  }
+
+  &__tabsWrap_active & {
+    &__button {
+      &:hover {
+        color: color('primary');
+      }
+    }
+  }
+
+  &__tabsWrap_inActive & {
+    &__button {
+      color: color('grey60');
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+  &__buttonWrap {
+    margin-top: 36px;
+  }
+
+  &__buttonWrap_active {
+    color: color('blue');
+  }
+
+  &__button_active {
+    &:after {
+      position: absolute;
+      top: 34px;
+      display: block;
+      content: '';
+      width: 100%;
+      height: 2px;
+      background: color('red');
+      @include breakpoint('notebookBig', true) {
+        top: 40px;
+      }
+    }
+    &:hover {
+      color: color('primary');
+    }
+  }
+
+  &__button_inactive {
+    color: color('grey60');
+    &:after {
+      display: none;
+    }
+    &:hover {
+      color: color('primary');
+    }
+  }
+}
+
+.active {
+  display: block;
+}
+
+.inactive {
+  display: none;
+}

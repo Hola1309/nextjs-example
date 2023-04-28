@@ -1,0 +1,216 @@
+@use 'styles/common' as *;
+@use 'styles/common/variables' as *;
+
+.MainNewsBlock {
+  margin: 0px 0;
+  @include breakpoint('notebookBig', true) {
+    padding-top: 60px;
+  }
+
+  @include breakpoint('phone', true) {
+    padding-top: 20px;
+  }
+  &__titleWrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid color('grey80');
+    padding-bottom: 24px;
+    @include breakpoint('phone', true) {
+      margin-left: 16px;
+      margin-right: 16px;
+    }
+    button {
+      @include breakpoint('phone', true) {
+        display: none;
+      }
+    }
+  }
+
+  &__title {
+    @include font($size: $fontSize-2 * 1.2, $weight: 600, $height: $lineHeight-5);
+    text-transform: uppercase;
+    cursor: default;
+
+    @include breakpoint('notebookBig', true) {
+      font-size: $fontSize-2;
+    }
+    @include breakpoint('phone', true) {
+      font-size: $fontSize-4;
+    }
+    @include breakpoint('verticalTablet', true) {
+      font-size: 32px;
+    }
+  }
+
+  &__itemWrap {
+    display: none;
+    display: flex;
+    @include breakpoint('phone', true) {
+      flex-direction: column;
+      flex-wrap: nowrap;
+      border-bottom-width: 0px;
+      margin-left: 16px;
+      margin-right: 16px;
+      padding-right: 12px;
+      padding-left: 12px;
+    }
+    @include breakpoint('verticalTablet', true) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    width: 33.3%;
+    justify-content: space-between;
+    border-right: 1px solid color('grey20');
+    transition: $duration;
+    cursor: pointer;
+
+    padding-left: 18px;
+
+    &:hover {
+      background: white;
+      transform-origin: left center;
+    }
+
+    @include breakpoint('notebookBig', true) {
+      padding: 0 20px;
+    }
+
+    &:first-child {
+    }
+    &:nth-child(2) {
+      @include breakpoint('verticalTablet', true) {
+        border-right-width: 0px;
+      }
+    }
+    &:last-child {
+      border-right: none;
+      @include breakpoint('verticalTablet', true) {
+        display: none;
+      }
+    }
+    @include breakpoint('phone', true) {
+      display: contents;
+      border-right: none;
+      &:first-child {
+        padding-left: 16px;
+      }
+    }
+    @include breakpoint('verticalTablet', true) {
+      width: 50%;
+    }
+  }
+
+  &__infoWrap {
+    justify-content: space-between;
+    display: flex;
+    margin: 36px 0;
+    @include breakpoint('phone', true) {
+      margin-top: 24px;
+      margin-bottom: 26px;
+    }
+  }
+
+  &__section {
+    @include font($size: $fontSize-8 * 1.2, $weight: 500, $height: $lineHeight-4);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: color('red');
+
+    @include breakpoint('notebookBig', true) {
+      font-size: $fontSize-8;
+    }
+  }
+
+  &__date {
+    @include font($size: $fontSize-8 * 1.2, $weight: 500, $height: $lineHeight-4);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: color('grey60');
+
+    @include breakpoint('notebookBig', true) {
+      font-size: $fontSize-8;
+    }
+  }
+
+  &__imageWrap {
+    width: 100%;
+    padding-bottom: 20px;
+    img {
+      width: 100%;
+      display: block;
+      @include breakpoint('phone', true) {
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__newsTitle {
+    @include font($size: $fontSize-5 * 1.2, $weight: 600, $height: $lineHeight-2);
+    margin-bottom: 16px;
+    max-width: 97%;
+
+    @include breakpoint('notebookBig', true) {
+      font-size: $fontSize-5;
+    }
+    @include breakpoint('phone', true) {
+      font-size: $fontSize-6;
+    }
+    @include breakpoint('verticalTablet', true) {
+      font-size: $fontSize-6;
+    }
+  }
+
+  &__row {
+    display: none;
+    @include breakpoint('phone', true) {
+      display: unset;
+      height: 1px;
+      background-color: #3a3a3a;
+    }
+  }
+  &__subtitle {
+    @include font($size: $fontSize-6 * 1.2, $weight: 400, $height: $lineHeight-1);
+    color: color('grey60');
+
+    @include breakpoint('notebookBig', true) {
+      font-size: $fontSize-6;
+    }
+    @include breakpoint('phone', true) {
+      font-size: $fontSize-7;
+      margin-bottom: 16px;
+    }
+    @include breakpoint('verticalTablet', true) {
+      font-size: $fontSize-7;
+    }
+  }
+
+  &__buttonWrap {
+    margin-bottom: 40px;
+    margin-top: auto;
+    @include breakpoint('phone', true) {
+      margin-top: 16px;
+      margin-bottom: 28px;
+    }
+    button {
+      @include breakpoint('verticalTablet', true) {
+        font-size: 16px;
+      }
+    }
+  }
+  &__ButtonWrap {
+    &__mob {
+      display: none;
+
+      @include breakpoint('phone', true) {
+        display: flex;
+        justify-content: center;
+        padding-top: 32px;
+      }
+    }
+  }
+}

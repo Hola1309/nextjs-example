@@ -1,0 +1,196 @@
+@use 'styles/common' as *;
+@use 'styles/common/variables' as *;
+
+.ContactsBlock {
+  margin: 80px 0 84px;
+  @include breakpoint('notebookBig', true) {
+    margin: 60px 0 60px;
+  }
+
+  &__titleWrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 24px;
+    border-bottom: 1px solid color('grey80');
+    @include breakpoint('phone', true) {
+      padding-bottom: 16px;
+    }
+  }
+
+  &__title {
+    @include font($size: $fontSize-2 * 1.2, $weight: 600, $height: $lineHeight-5);
+    text-transform: uppercase;
+    cursor: default;
+
+    @include breakpoint('notebookBig', true) {
+      font-size: $fontSize-2;
+    }
+    @include breakpoint('verticalTablet', true) {
+      font-size: $fontSize-4;
+    }
+    @include breakpoint('phone', true) {
+      font-size: $fontSize-4;
+    }
+  }
+
+  &__contentWrap {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    @include breakpoint('verticalTablet', true) {
+      flex-direction: column;
+      margin-top: 0px;
+    }
+    @include breakpoint('phone', true) {
+      flex-direction: column;
+      margin-top: 0px;
+    }
+  }
+
+  &__content {
+    &:first-child {
+      width: 42%;
+      padding: 40px 40px 0 40px;
+    }
+    &:last-child {
+      width: 56%;
+      max-width: 660px;
+    }
+    @include breakpoint('verticalTablet', true) {
+      &:first-child {
+        width: 100%;
+        padding: 0px;
+      }
+      &:last-child {
+        width: 100%;
+      }
+      margin-bottom: 38px;
+    }
+    @include breakpoint('phone', true) {
+      &:first-child {
+        width: 100%;
+        padding: 0px;
+      }
+      &:last-child {
+        width: 100%;
+      }
+      margin-bottom: 38px;
+    }
+  }
+
+  &__infoBlock {
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 0;
+    border-bottom: 1px solid color('grey80');
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    @include breakpoint('verticalTablet', true) {
+      flex-direction: column;
+    }
+    @include breakpoint('phone', true) {
+      flex-direction: column;
+    }
+  }
+  &__description {
+    @include breakpoint('notebookBig', true) {
+      font-size: 16px;
+      margin-top: 12px;
+    }
+  }
+  &__descriptionScheme {
+    @include font($size: $fontSize-8 * 1.2, $weight: 500, $height: $lineHeight-4);
+    letter-spacing: 0.04em;
+    text-decoration: underline;
+
+    @include breakpoint('notebookBig', true) {
+      font-size: $fontSize-8;
+    }
+  }
+
+  &__subtitle {
+    width: 43%;
+    max-width: 170px;
+    @include font($size: $fontSize-5 * 1.2, $weight: 600, $height: $lineHeight-2);
+
+    @include breakpoint('notebookBig', true) {
+      font-size: $fontSize-5;
+    }
+    @include breakpoint('phone', true) {
+      font-size: $fontSize-6;
+      margin-bottom: 4px;
+    }
+  }
+
+  &__infoWrap {
+    display: flex;
+    flex-direction: column;
+    width: 57%;
+  }
+
+  &__iconWrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &__icon {
+    margin-right: 16px;
+  }
+
+  &__info {
+    width: 57%;
+
+    @include breakpoint('phone', true) {
+      font-size: 16px;
+      margin-top: 12px;
+    }
+  }
+
+  &__mapWrap {
+    max-width: 860px;
+    width: 100%;
+    height: 449px;
+
+    @include breakpoint('additionalTablet') {
+      height: 340px;
+    }
+    @include breakpoint('verticalTablet') {
+      max-width: none;
+    }
+    @include breakpoint('phone') {
+      max-width: none;
+      height: 223px;
+    }
+  }
+
+  &__map {
+    width: 100%;
+    height: 449px;
+
+    @include breakpoint('additionalTablet') {
+      height: 340px;
+    }
+
+    @include breakpoint('verticalTablet') {
+      width: 100%;
+    }
+    @include breakpoint('phone') {
+      height: 223px;
+    }
+  }
+
+  @include breakpoint('verticalTablet', true) {
+    margin-top: 32px;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+  @include breakpoint('phone', true) {
+    margin-top: 32px;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}

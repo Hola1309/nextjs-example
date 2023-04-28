@@ -1,0 +1,58 @@
+@use 'styles/common' as *;
+@use 'styles/common/variables' as *;
+
+.Heading {
+  position: relative;
+  line-height: $lineHeight-2;
+  white-space: pre-line;
+  text-transform: uppercase;
+  color: color('primary');
+
+  &_notransform {
+    text-transform: none;
+  }
+
+  &_level-1 {
+    @include font($size: $fontSize-1 * 1.2, $weight: 500, $height: $lineHeight-5);
+
+    @include breakpoint('notebookBig', true) {
+      font-size: $fontSize-1;
+    }
+  }
+
+  &_level-2 {
+    @include font($size: $fontSize-2 * 1.2, $weight: 600, $height: $lineHeight-5);
+
+    @include breakpoint('notebookBig', true) {
+      font-size: $fontSize-2;
+    }
+    @include breakpoint('verticalTablet', true) {
+      font-size: 32px;
+    }
+    @include breakpoint('phone', true) {
+      font-size: $fontSize-4;
+    }
+  }
+
+  &_level-3 {
+    @include font($size: $fontSize-3 * 1.2, $weight: 600, $height: $lineHeight-5);
+
+    @include breakpoint('notebookBig', true) {
+      font-size: $fontSize-3;
+    }
+    @include breakpoint('verticalTablet', true) {
+      font-size: 32px;
+    }
+    @include breakpoint('phone', true) {
+      font-size: $fontSize-4;
+    }
+  }
+
+  &_level-4 {
+    @include font($size: $fontSize-7 * 1.2, $weight: 500, $height: $lineHeight-4);
+
+    @include breakpoint('notebookBig', true) {
+      font-size: $fontSize-7;
+    }
+  }
+}

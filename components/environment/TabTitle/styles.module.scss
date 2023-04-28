@@ -1,0 +1,40 @@
+@use 'styles/common' as *;
+@use 'styles/common/variables' as *;
+
+.TabTitle {
+  margin-right: 40px;
+
+  transition: $easeInOutSine 400ms;
+
+  &_inactive {
+    padding-right: 8px;
+    color: color('grey60');
+    transition: background-color $duration, color $duration;
+  }
+
+  &_inactive::after {
+    content: none;
+  }
+
+  &_active {
+    padding-right: 8px;
+    transition: background-color $duration, color $duration;
+
+    &:hover {
+      color: color('primary');
+    }
+  }
+  @include breakpoint('phone', true) {
+    &_active {
+      padding-right: 0px;
+      color: #b90c2f;
+
+      &:hover {
+        color: #b90c2f;
+      }
+    }
+    &_active::after {
+      content: none;
+    }
+  }
+}

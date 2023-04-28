@@ -1,0 +1,44 @@
+@use 'styles/common' as *;
+@use 'styles/common/variables' as *;
+
+.NomenclatureProductsBlock {
+  margin: 40px 0;
+
+  &__titleWrap {
+    margin-bottom: 48px;
+    @include breakpoint('phone', true) {
+      margin-bottom: 32px;
+      margin-left: 16px;
+      margin-right: 16px;
+    }
+  }
+
+  &__content {
+    margin-bottom: 40px;
+    &:first-child {
+      width: 33%;
+    }
+    &:last-child {
+      width: 67%;
+      padding: 40px 72px 40px 40px;
+      background: color('white');
+    }
+    @include breakpoint('verticalTablet', true) {
+      width: 100%;
+    }
+  }
+  &__title {
+    @include breakpoint('verticalTablet', true) {
+      font-size: 32px;
+    }
+    @include breakpoint('phone', true) {
+      font-size: $fontSize-4;
+    }
+  }
+  @include breakpoint('verticalTablet', true) {
+    margin: 40px 0;
+  }
+  @include breakpoint('phone', true) {
+    margin-top: 32px;
+  }
+}

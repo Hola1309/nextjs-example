@@ -1,0 +1,33 @@
+$colors: (
+  'primary': #292c31,
+  'grey80': #54565a,
+  'grey60': #7f8083,
+  'grey40': #a9abad,
+  'grey20': #d4d5d6,
+  'grey10': #eaeaea,
+  'white': #fff,
+  'red': #b90c2f,
+  'blue': #03439a,
+  'darkBlue': #04306d,
+  'darkBlue_2': #172735,
+  'background': #f5f5f5,
+);
+
+$breakpoints: (
+  'smallPhone': 320,
+  'oldPhone': 360,
+  'phone': 767,
+  'verticalTabletMax': 1023,
+  'verticalTablet': 1024,
+  'additionalTablet': 1199,
+  'tablet': 1366,
+  'smallScreen': 1399,
+  'notebook': 1440,
+  'notebookBig': 1599,
+  'mediumScreenSmall': 1600,
+  'mediumScreen': 1680,
+  'mediumScreenBig': 1730,
+  'regularScreen': 1919,
+  'bigScreen': 2200,
+  'megaScreen': 2440,
+) !default;

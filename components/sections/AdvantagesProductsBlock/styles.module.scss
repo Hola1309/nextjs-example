@@ -1,0 +1,38 @@
+@use 'styles/common' as *;
+@use 'styles/common/variables' as *;
+
+.AdvantagesProductsBlock {
+  margin: 80px 0;
+
+  @include breakpoint('notebookBig', true) {
+    margin: 60px 0;
+  }
+
+  &__titleWrap {
+    margin-bottom: 24px;
+  }
+  &__descriptionItemWrapp {
+    margin-right: 40px;
+  }
+  &__descriptionItem {
+    position: relative;
+    margin-left: 16px;
+    margin-top: 16px;
+
+    &:before {
+      display: none;
+      content: '';
+      position: absolute;
+      height: 7px;
+      width: 7px;
+      border-radius: 50%;
+      top: 9px;
+      left: -16px;
+      background: color('red');
+    }
+  }
+  @include breakpoint('phone', true) {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}

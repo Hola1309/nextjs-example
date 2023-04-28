@@ -1,0 +1,157 @@
+@use 'styles/common' as *;
+@use 'styles/common/variables' as *;
+
+.CareerVacancyBlock {
+  padding-top: 40px;
+  margin: 80px 0;
+
+  @include breakpoint('notebookBig', true) {
+    margin: 60px 0;
+    padding-top: 36px;
+  }
+
+  &__titleWrap {
+    margin-bottom: 24px;
+  }
+
+  &__description {
+    max-width: 700px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: flex-start;
+    padding-bottom: 40px;
+
+    &:first-child {
+      border-top: 1px solid color('grey80');
+      padding-top: 40px;
+      margin-top: 24px;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+    @include breakpoint('phone', true) {
+      padding-top: 24px;
+      &:first-child {
+        padding-top: 24px;
+      }
+    }
+  }
+
+  &__listWrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 48px;
+    border-bottom: 1px solid color('grey80');
+    @include breakpoint('phone', true) {
+      flex-direction: column;
+      margin-top: 32px;
+    }
+  }
+
+  &__listWrap {
+    display: flex;
+    &:first-child {
+      flex-wrap: wrap;
+      max-width: 800px;
+    }
+    @include breakpoint('phone', true) {
+      flex-direction: column;
+    }
+  }
+
+  &__listWrap > &__listBlock {
+    flex: 50%;
+  }
+
+  &__listBlock {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 40px;
+    @include breakpoint('phone', true) {
+      padding-bottom: 24px;
+    }
+  }
+
+  &__listItemTitle {
+    color: color('grey60');
+    @include font($size: $fontSize-6 * 1.2, $weight: 400, $height: $lineHeight-1);
+    margin-bottom: 12px;
+
+    @include breakpoint('notebookBig', true) {
+      font-size: $fontSize-6;
+    }
+    @include breakpoint('phone', true) {
+      font-size: $fontSize-7;
+    }
+  }
+
+  &__listItem {
+    @include font($size: $fontSize-6 * 1.2, $weight: 400, $height: $lineHeight-1);
+
+    @include breakpoint('notebookBig', true) {
+      font-size: $fontSize-6;
+    }
+    @include breakpoint('phone', true) {
+      font-size: $fontSize-7;
+    }
+  }
+
+  &__date {
+    margin-bottom: 24px;
+    @include font($size: $fontSize-8 * 1.2, $weight: 500, $height: $lineHeight-4);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: color('red');
+
+    @include breakpoint('notebookBig', true) {
+      font-size: $fontSize-8;
+    }
+  }
+
+  &__subtitle {
+    @include font($size: $fontSize-5 * 1.2, $weight: 600, $height: $lineHeight-2);
+
+    @include breakpoint('notebookBig', true) {
+      font-size: $fontSize-5;
+    }
+    @include breakpoint('notebookBig', true) {
+      font-size: $fontSize-6;
+    }
+  }
+
+  &__listInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    @include breakpoint('phone', true) {
+      align-items: flex-start;
+      padding-bottom: 24px;
+    }
+  }
+
+  &__salary {
+    color: color('red');
+    @include font($size: $fontSize-4 * 1.2, $weight: 400, $height: $lineHeight-1);
+    margin-bottom: 80px;
+
+    @include breakpoint('notebookBig', true) {
+      font-size: $fontSize-4;
+    }
+    @include breakpoint('phone', true) {
+      font-size: $fontSize-5;
+      padding-top: 4px;
+      margin-bottom: 32px;
+    }
+  }
+  @include breakpoint('phone', true) {
+    padding-top: 0px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-bottom: 42px;
+  }
+}

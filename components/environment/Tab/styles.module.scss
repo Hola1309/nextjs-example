@@ -1,0 +1,31 @@
+@use 'styles/common' as *;
+@use 'styles/common/variables' as *;
+
+.Container {
+  position: relative;
+  left: 0;
+  width: 100%;
+  max-width: 1834px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include breakpoint('regularScreen') {
+    width: auto;
+    margin: 0 48px;
+  }
+
+  @include breakpoint('notebookBig') {
+    width: auto;
+    margin: 0 40px;
+  }
+
+  @include breakpoint('additionalTablet') {
+    width: auto;
+    margin: 0 16px;
+  }
+
+  @include breakpoint('phone') {
+    width: auto;
+    margin: 0;
+  }
+}

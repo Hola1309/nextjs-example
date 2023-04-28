@@ -1,0 +1,18 @@
+@use 'styles/common' as *;
+@use 'styles/common/variables' as *;
+
+.Tabs {
+  &__wrapper {
+    padding-bottom: 4px;
+    border-bottom: 1px solid color('grey20');
+    @include breakpoint('verticalTablet', true) {
+      white-space: nowrap;
+      overflow-x: scroll;
+    }
+    @include breakpoint('phone', true) {
+      border-bottom-width: 0px;
+      margin-left: 16px;
+      margin-right: 16px;
+    }
+  }
+}

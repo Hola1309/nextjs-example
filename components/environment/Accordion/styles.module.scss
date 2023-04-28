@@ -1,0 +1,152 @@
+@use 'styles/common' as *;
+@use 'styles/common/variables' as *;
+
+.Accordion {
+  position: relative;
+  border-top: 1px solid color('grey20');
+  @include breakpoint('phone', true) {
+    font-size: 16px;
+  }
+  &:last-child {
+    border-bottom: 1px solid color('grey20');
+  }
+
+  &__head {
+    display: flex;
+    z-index: 1;
+    justify-content: flex-start;
+    padding: 40px 0;
+    cursor: pointer;
+  }
+
+  &__number {
+    margin-right: 93px;
+    transition: $duration color;
+
+    @include font($size: $fontSize-5 * 1.2, $weight: 600, $height: $lineHeight-2);
+
+    @include breakpoint('notebookBig', true) {
+      font-size: $fontSize-5;
+    }
+    @include breakpoint('phone', true) {
+      font-size: $fontSize-7;
+      margin-right: 22px;
+    }
+  }
+
+  &__title {
+    transition: $duration color;
+
+    @include font($size: $fontSize-5 * 1.2, $weight: 600, $height: $lineHeight-2);
+
+    @include breakpoint('notebookBig', true) {
+      font-size: $fontSize-5;
+    }
+    @include breakpoint('phone', true) {
+      font-size: $fontSize-7;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    width: 32px;
+    height: 32px;
+    margin-left: auto;
+    color: color('primary');
+    border-radius: 50%;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    transition: $duration color;
+
+    svg {
+      display: block;
+      transition: $duration transform;
+    }
+  }
+
+  &__head:hover & {
+    &__btn {
+      color: color('white');
+    }
+  }
+
+  &__bodyWrap {
+    position: relative;
+    margin-top: -12px;
+    margin-bottom: 0;
+    padding-top: 12px;
+    transition: $duration height;
+    font-size: $fontSize-6;
+    @include breakpoint('verticalTablet', true) {
+      padding-top: 0px;
+      transition: $duration 400px;
+    }
+    @include breakpoint('phone', true) {
+      padding-top: 0px;
+      transition: $duration 400px;
+    }
+    img {
+      margin-right: 80px;
+      width: 583px;
+      height: 317px;
+      @include breakpoint('phone', true) {
+        width: 100%;
+        margin-right: unset;
+        object-fit: contain;
+      }
+    }
+  }
+
+  &__body {
+    top: -62px;
+    right: calc(7% + 100px);
+    visibility: hidden;
+    opacity: 0;
+    transition: $duration opacity, 0s visibility $duration;
+    justify-content: space-between;
+    padding-bottom: 52px;
+    @include breakpoint('notebookBig', true) {
+      right: calc(1% + 100px);
+    }
+    @include breakpoint('verticalTablet', true) {
+      position: unset;
+    }
+    @include breakpoint('phone', true) {
+      position: unset;
+      max-width: none;
+      padding-bottom: 25px;
+    }
+  }
+
+  &_opened & {
+    &__number {
+      color: color('red');
+    }
+
+    &__title {
+      color: color('red');
+
+      @include breakpoint('phone', true) {
+        font-size: $fontSize-7;
+      }
+    }
+
+    &__body {
+      display: flex;
+      flex-direction: row;
+      visibility: visible;
+      opacity: 1;
+      transition: $duration opacity, 0s visibility;
+      @include breakpoint('phone', true) {
+        flex-direction: column;
+      }
+    }
+
+    &__btn {
+      svg {
+        transform: rotate(45deg);
+      }
+    }
+  }
+}

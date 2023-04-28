@@ -1,0 +1,14 @@
+{
+  "smallPhone": 320,
+  "oldPhone": 360,
+  "phone": 767,
+  "verticalTabletMax": 1023,
+  "verticalTablet": 1024,
+  "additionalTablet": 1199,
+  "tablet": 1366,
+  "smallScreen": 1399,
+  "notebook": 1439,
+  "mediumScreen": 1680,
+  "bigScreen": 2200,
+  "megaScreen": 2440
+}

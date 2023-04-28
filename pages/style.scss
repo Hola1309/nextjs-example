@@ -1,0 +1,64 @@
+@use 'styles/common' as *;
+.right {
+  display: none;
+  @include breakpoint('phone', true) {
+    display: unset;
+  }
+}
+.bm-overlay {
+  background: rgb(255 255 255);
+}
+.bm-cross {
+  background: #bdc3c7;
+}
+.bm-burger-bars-hover {
+  background: #a90000;
+}
+.bm-menu-wrap {
+  top: 0px;
+  width: 100vw;
+}
+.bm-menu {
+  background: #ffffff;
+  padding: 73px 16px 0;
+  font-size: 1.15em;
+}
+.bm-item-list {
+  color: #b8b7ad;
+  padding-top: 34px;
+  border-top: 1px solid #d4d5d6;
+}
+.bm-item {
+  color: black;
+  margin-bottom: 20px;
+}
+.bm-overlay {
+  top: 0px;
+  // width: 100%;
+  background: unset;
+}
+.bm-burger-button {
+  position: relative;
+  float: right;
+  width: 31px;
+  height: 25px;
+  // left: 36px;
+  top: 14px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #373a47;
+  height: 8%;
+  span {
+    height: 8%;
+  }
+}
+.bm-cross {
+  height: 31px;
+}
+.bm-cross-button {
+  width: 31px;
+  height: 31px;
+}
+/* Color/shape of burger icon bars on hover*/

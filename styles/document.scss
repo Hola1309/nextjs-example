@@ -1,0 +1,64 @@
+/* ** --- Reset CSS --- ** */
+@use 'sass:math';
+@use 'reset.scss';
+@use 'common.scss' as *;
+
+/* ** --- Box sizing --- ** */
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+/* ** --- Fonts --- ** */
+@include webFont($fontFamily-0, 'Manrope-Regular');
+@include webFont($fontFamily-1, 'Montserrat-Regular');
+
+/* ** --- Document --- ** */
+
+html,
+body {
+  min-height: 100%;
+  font-family: $fontFamily;
+  font-weight: 400;
+  font-size: $baseFontSize * 1.2;
+  line-height: $lineHeight;
+  color: color('primary');
+  background: color('background');
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-variant-ligatures: none;
+  @include breakpoint('notebookBig', true) {
+    font-size: $baseFontSize;
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: $fontFamilyBig;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* ** --- Links --- ** */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}

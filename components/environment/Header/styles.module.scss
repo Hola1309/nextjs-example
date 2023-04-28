@@ -1,0 +1,472 @@
+@use 'styles/common' as *;
+
+.Header {
+  cursor: pointer;
+  &__container {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    @include breakpoint('phone', true) {
+      padding-left: 16px;
+      padding-right: 16px;
+      padding-bottom: 10px;
+    }
+    @include breakpoint('verticalTablet', true) {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+  svg {
+    width: 160px;
+    height: 80px;
+    display: block;
+    @include breakpoint('verticalTablet', true) {
+      width: auto;
+      height: auto;
+    }
+  }
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &__list {
+    &__wrapp {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      @include breakpoint('phone', true) {
+        display: none;
+      }
+    }
+    font-size: $fontSize-6;
+    margin-top: 28px;
+    min-width: 684px;
+    width: 1026px;
+    display: flex;
+    justify-content: space-between;
+    @include breakpoint('notebookBig', true) {
+      min-width: 574px;
+    }
+    @include breakpoint('phone', true) {
+      min-width: 0;
+    }
+  }
+
+  &__listItem {
+    cursor: pointer;
+    transition: color $duration;
+    color: color('grey60');
+
+    &__hover {
+      display: block;
+    }
+    &:hover {
+      color: color('blue');
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @include breakpoint('notebookBig', true) {
+    }
+    @include breakpoint('phone', true) {
+      display: none;
+    }
+
+    @include breakpoint('verticalTablet') {
+      font-size: $fontSize-7;
+    }
+  }
+
+  &__listItem_active {
+  }
+
+  &__listItem_active > a {
+    padding-bottom: 40px;
+    color: color('primary');
+    border-bottom: 2px solid color('red');
+    transition: color $duration;
+
+    // &:hover {
+    //   color: color('blue');
+    // }
+
+    @include breakpoint('notebookBig', true) {
+      padding-bottom: 40px;
+    }
+  }
+
+  &__infoWrapper {
+    display: flex;
+    @include breakpoint('phone', true) {
+      display: none;
+    }
+    @include breakpoint('verticalTablet', true) {
+      display: none;
+    }
+  }
+
+  &__blockWrap {
+    display: flex;
+  }
+
+  &__logoWrap {
+    align-items: center;
+  }
+
+  &__logo {
+    display: block;
+    cursor: pointer;
+  }
+
+  &__phone {
+    @include font($size: $fontSize-6 * 1.2, $weight: 600, $height: $lineHeight-1);
+    margin-right: 42px;
+    cursor: pointer;
+    transition: color $duration;
+    position: relative;
+
+    &:hover {
+      color: color('blue');
+    }
+
+    @include breakpoint('notebookBig', true) {
+      font-size: $fontSize-6;
+      margin-right: 36px;
+    }
+  }
+
+  &__phone::after {
+    position: absolute;
+    top: 32px;
+    content: '';
+    width: 0px;
+    height: 2px;
+    display: block;
+    background: color('blue');
+    transition: $easeInOutSine 400ms;
+
+    @include breakpoint('notebookBig', true) {
+      top: 28px;
+    }
+  }
+
+  &__phone:hover::after {
+    width: 100%;
+  }
+
+  &__email {
+    @include font($size: $fontSize-6 * 1.2, $weight: 600, $height: $lineHeight-1);
+    cursor: pointer;
+    transition: color $duration;
+    position: relative;
+
+    &:hover {
+      color: color('blue');
+    }
+
+    @include breakpoint('notebookBig', true) {
+      font-size: $fontSize-6;
+    }
+  }
+
+  &__email::after {
+    position: absolute;
+    top: 32px;
+    content: '';
+    width: 0px;
+    height: 2px;
+    display: block;
+    background: color('blue');
+    transition: $easeInOutSine 400ms;
+
+    @include breakpoint('notebookBig', true) {
+      top: 28px;
+    }
+  }
+
+  &__email:hover::after {
+    width: 100%;
+  }
+
+  &__iconWrap {
+    display: flex;
+    width: 100%;
+    max-width: 197px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__icon {
+    &:last-child {
+      display: flex;
+      padding-bottom: 8px;
+    }
+  }
+}
+
+.hamburger__wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.hamburger-menu {
+  display: flex;
+  width: 28px;
+  height: 24px;
+  flex-direction: column;
+  cursor: pointer;
+  justify-content: space-around;
+}
+
+.hamburger__wrapper:hover {
+  cursor: pointer;
+  justify-content: space-between;
+}
+
+.hamburger__wrapper:hover .hamburger-menu > .line {
+  width: 100%;
+  background: color('blue');
+}
+
+.hamburger__wrapper:hover .hamburger-menu > .line-1 {
+  width: 100%;
+  background: color('blue');
+}
+
+.hamburger__wrapper:hover .hamburger-menu > .line-2 {
+  width: 100%;
+  background: color('blue');
+}
+
+.hamburger__wrapper:hover .hamburger-menu > .line-3 {
+  width: 100%;
+  background: color('blue');
+}
+
+.line {
+  width: 100%;
+  height: 2px;
+  background: color('primary');
+  border-radius: 10px;
+  transition: $easeInOutCubic 600ms;
+}
+
+.line-3 {
+  transition: $easeInOutSine 300ms;
+  width: 33%;
+}
+
+.line-2 {
+  width: 67%;
+}
+
+.cross {
+  width: 100%;
+  height: 2px;
+  background: color('primary');
+  border-radius: 10px;
+}
+
+.cross-1 {
+  width: 100%;
+  background: color('grey80');
+}
+
+.cross-2 {
+  width: 100%;
+  background: color('grey80');
+}
+.cross-3 {
+  width: 100%;
+  background: color('grey80');
+}
+
+.hamburger-menu:hover > .cross-1 {
+  background: color('blue');
+}
+
+.hamburger-menu:hover > .cross-2 {
+  background: color('blue');
+}
+.hamburger-menu:hover > .cross-3 {
+  background: color('blue');
+}
+
+.hideMenu {
+  display: none;
+}
+// .hide {
+//   @include breakpoint('phone', true) {
+//     display: none;
+//   }
+// }
+.hamburger-main-menu {
+  border-bottom: 1px solid color('grey20');
+  height: 110px;
+  @include breakpoint('phone', true) {
+    height: 74px;
+  }
+  &__active {
+    // -webkit-transform: scale(1);
+    // -ms-transform: scale(1);
+    // transform: scale(1);
+    // transition: 0.5s;
+    // overflow: hidden;
+    &__f {
+      // margin-top: 20px;
+      -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+      transform: scale(1);
+      transition: 0.5s;
+      height: 0px;
+      overflow: hidden;
+    }
+    &__t {
+      margin-top: 20px;
+      -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+      transform: scale(1);
+      transition: 0.5s;
+      height: 165px;
+      overflow: hidden;
+    }
+  }
+  &__hover {
+    width: 220px;
+    height: 10px;
+    transition: 0.2s;
+    &:hover {
+      height: 303px;
+    }
+  }
+  &__item {
+    a {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 18 * 1.2px;
+      line-height: 135%;
+      @include breakpoint('notebookBig') {
+        font-size: 16px;
+      }
+    }
+    &:hover {
+      // color: color('blue');
+    }
+  }
+  &__wrapper {
+    position: absolute;
+    z-index: 99;
+    overflow: hidden;
+    width: 100vw;
+    margin-left: 0px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    justify-content: flex-start;
+    @include breakpoint('phone', true) {
+      flex-direction: column;
+      margin-right: 16px;
+    }
+  }
+  &__popup {
+    height: 100vh;
+    padding-top: 9vh;
+    display: flex;
+    margin: auto;
+    max-width: 1834px;
+    justify-content: space-between;
+    @include breakpoint('regularScreen', true) {
+      margin-left: 48px;
+      margin-right: 48px;
+    }
+    @include breakpoint('notebookBig', true) {
+      margin-left: 40px;
+      margin-right: 40px;
+    }
+    @include breakpoint('additionalTablet', true) {
+      margin-left: 16px;
+      margin-right: 16px;
+    }
+    @include breakpoint('phone', true) {
+      flex-direction: column;
+      justify-content: flex-start;
+      padding-top: 34px;
+    }
+  }
+  &__list {
+    width: 382px;
+    height: 244px;
+    background-color: white;
+    margin-top: 44px;
+    &__item {
+      width: 334px;
+      font-size: $fontSize-8;
+      margin-top: 20px;
+      margin-left: 24px;
+      line-height: 135%;
+      &:first-child {
+        padding-top: 16px;
+      }
+      // &:hover {
+      //   color: color('blue');
+      // }
+    }
+  }
+  &__listHeader {
+    display: flex;
+    justify-content: space-between;
+    min-width: 316px;
+    margin-bottom: 32px;
+    @include font($size: $fontSize-3, $weight: 600, $height: $lineHeight-1);
+    cursor: pointer;
+    transition: color $duration;
+
+    // &:hover {
+    //   color: color('blue');
+    // }
+    &__arrow {
+      display: none;
+      float: right;
+      margin-top: 5px;
+      @include breakpoint('phone', true) {
+        display: block;
+      }
+      transition-duration: 0.8s;
+      transition-property: transform;
+    }
+    // &__arrow:hover {
+    //   transform: rotate(180deg);
+    //   -webkit-transform: rotate(180deg);
+    // }
+    @include breakpoint('notebookBig', true) {
+      font-size: $fontSize-3;
+    }
+    @include breakpoint('phone', true) {
+      font-size: $fontSize-7;
+      margin-bottom: 16px;
+      min-width: 100%;
+    }
+  }
+
+  &__listItem {
+    margin-bottom: 24px;
+    @include font($size: $fontSize-5 * 1.2, $height: $lineHeight-3);
+    cursor: pointer;
+    transition: color $duration;
+
+    // &:hover {
+    //   color: color('blue');
+    // }
+
+    @include breakpoint('notebookBig', true) {
+      font-size: $fontSize-5;
+    }
+    @include breakpoint('phone', true) {
+      font-size: $fontSize-8;
+      margin-bottom: 12px;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": ".next",
+    "allowJs": true,
+    "alwaysStrict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "lib": ["dom", "es2017"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "esnext",
+    "paths": {
+      "components/*": ["components/*"],
+      "config/*": ["config/*"],
+      "pages/*": ["pages/*"],
+      "server/*": ["server/*"],
+      "store/*": ["store/*"],
+      "static/*": ["static/*"],
+      "types/*": ["types/*"],
+      "@constants/*": ["modules/constants/*"],
+      "@hooks/*": ["modules/hooks/*"],
+      "public": ["public"],
+      "assets": ["public/assets"],
+      "images": ["public/assets/images"]
+    },
+    "noEmit": true
+  },
+  "exclude": ["node_modules"],
+  "include": ["**/*.ts", "**/*.tsx", "pages/index.tsx", "pages/products/index.jsx"]
+}

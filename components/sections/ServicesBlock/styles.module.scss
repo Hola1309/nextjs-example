@@ -1,0 +1,110 @@
+@use 'styles/common' as *;
+@use 'styles/common/variables' as *;
+
+.ServicesBlock {
+  margin: 80px 0;
+  padding-top: 36px;
+
+  @include breakpoint('notebookBig', true) {
+    margin: 60px 0;
+  }
+
+  &__titleWrap {
+    margin-bottom: 24px;
+  }
+
+  &__title {
+    font-weight: 600;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    padding: 71px 117px 71px 80px;
+    height: 200px;
+    border: 1px solid color('grey20');
+    border-bottom: none;
+    cursor: pointer;
+    align-items: center;
+    transition: color $duration;
+
+    &:last-child {
+      border-bottom: 1px solid color('grey20');
+    }
+
+    &:hover {
+      color: color('white');
+      &:first-child {
+        background: linear-gradient(
+            89.9deg,
+            #19263f -3.45%,
+            rgba(85, 93, 109, 0.651042) 24.49%,
+            rgba(89, 97, 113, 0.625) 52.65%,
+            rgba(196, 196, 196, 0) 100.68%
+          ),
+          url('/assets/images/services/services-hover.png') no-repeat center/cover;
+      }
+      &:nth-child(2) {
+        background: linear-gradient(
+            89.9deg,
+            #19263f -3.45%,
+            rgba(85, 93, 109, 0.651042) 24.49%,
+            rgba(89, 97, 113, 0.625) 52.65%,
+            rgba(196, 196, 196, 0) 100.68%
+          ),
+          url('/assets/images/services/services-hover1.png') no-repeat center/cover;
+      }
+      &:nth-child(3) {
+        background: linear-gradient(
+            89.9deg,
+            #19263f -3.45%,
+            rgba(85, 93, 109, 0.651042) 24.49%,
+            rgba(89, 97, 113, 0.625) 52.65%,
+            rgba(196, 196, 196, 0) 100.68%
+          ),
+          url('/assets/images/services/services-hover2.png') no-repeat center/cover;
+      }
+      &:last-child {
+        background: linear-gradient(
+            89.9deg,
+            #19263f -3.45%,
+            rgba(85, 93, 109, 0.651042) 24.49%,
+            rgba(89, 97, 113, 0.625) 52.65%,
+            rgba(196, 196, 196, 0) 100.68%
+          ),
+          url('/assets/images/services/services-hover3.png') no-repeat center/cover;
+      }
+    }
+
+    &:hover > .ServicesBlock__arrowWrap > .ServicesBlock__arrow > svg * {
+      fill: color('white');
+    }
+    @include breakpoint('phone', true) {
+      height: 128px;
+    }
+  }
+
+  &__subtitle {
+    max-width: 670px;
+    @include font($size: $fontSize-5 * 1.2, $weight: 600, $height: $lineHeight-2);
+
+    @include breakpoint('notebookBig', true) {
+      max-width: 463px;
+      font-size: $fontSize-5;
+    }
+    @include breakpoint('phone', true) {
+      font-size: $fontSize-7;
+    }
+  }
+
+  &__arrow {
+    &:hover > svg * {
+      fill: color('white');
+    }
+  }
+  @include breakpoint('phone', true) {
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-bottom: 80px;
+  }
+}

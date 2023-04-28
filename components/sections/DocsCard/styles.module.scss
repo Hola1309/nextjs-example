@@ -1,0 +1,115 @@
+@use 'styles/common' as *;
+@use 'styles/common/variables' as *;
+
+.DetailedProductsItem {
+  margin-top: 60px;
+
+  &__docsWrap {
+    margin: 40px 40px 0;
+    @include breakpoint('phone', true) {
+      margin: 0px;
+      margin-left: 16px;
+      margin-right: 16px;
+    }
+  }
+
+  &__docsTitle {
+    @include font($size: $fontSize-5 * 1.2, $weight: 600, $height: $lineHeight-2);
+    margin-bottom: 24px;
+
+    @include breakpoint('notebookBig', true) {
+      font-size: $fontSize-5;
+    }
+    @include breakpoint('phone', true) {
+      margin-bottom: 20px;
+      margin-top: 20px;
+      font-size: $fontSize-6;
+      @include breakpoint('phone', true) {
+        font-size: $fontSize-8;
+      }
+    }
+  }
+
+  &__docsList {
+    display: grid;
+    justify-content: start;
+    grid-template-columns: 33% 33% 33%;
+    border-bottom: 1px solid color('grey20');
+    @include breakpoint('phone', true) {
+      flex-direction: column;
+      padding-bottom: 8px;
+      grid-template-columns: 100%;
+    }
+  }
+
+  &__docsItem {
+    letter-spacing: 0.04em;
+    display: flex;
+    flex-grow: 1;
+    @include breakpoint('phone', true) {
+      width: 100%;
+    }
+  }
+
+  &__docsItemTitleWrap {
+    margin-left: 16px;
+    margin-bottom: 36px;
+    cursor: pointer;
+    @include breakpoint('phone', true) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__docsItemTitle {
+    @include font($size: $fontSize-7 * 1.2, $weight: 400, $height: $lineHeight-1);
+    text-decoration: underline;
+    max-width: 100%;
+    margin-bottom: 12px;
+    margin-right: 16px;
+
+    @include breakpoint('notebookBig', true) {
+      font-size: $fontSize-7;
+      max-width: 321px;
+      margin-right: 0;
+    }
+  }
+
+  &__docsSize {
+    @include font($size: $fontSize-8 * 1.2, $weight: 500, $height: $lineHeight-4);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: color('grey40');
+
+    @include breakpoint('notebookBig', true) {
+      font-size: $fontSize-8;
+    }
+  }
+
+  &__buttonWrap {
+    padding-bottom: 60px;
+    text-align: center;
+    margin: 48px auto 0;
+    width: 390px;
+
+    @include breakpoint('notebookBig', true) {
+      width: 318px;
+    }
+    @include breakpoint('phone', true) {
+      margin-top: 32px;
+      padding-bottom: 40px;
+    }
+  }
+
+  &__button {
+    padding: 12px 60px;
+    width: 390px;
+    background: color('white');
+
+    @include breakpoint('notebookBig', true) {
+      width: 318px;
+    }
+    @include breakpoint('phone', true) {
+      padding: 12px 32px;
+    }
+  }
+}

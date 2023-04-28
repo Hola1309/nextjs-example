@@ -1,0 +1,88 @@
+@use 'styles/common' as *;
+@use 'styles/common/variables' as *;
+
+.GeographyTable {
+  margin: auto;
+  &__title {
+    padding-top: 60px;
+    padding-bottom: 24px;
+    font-weight: 600;
+    font-style: normal;
+    font-size: $fontSize-2;
+    line-height: 110%;
+    text-transform: uppercase;
+    cursor: default;
+    @include breakpoint('phone', true) {
+      font-size: $fontSize-4;
+      margin-right: 16px;
+      margin-left: 16px;
+    }
+  }
+  &__itemWrap {
+    padding-top: 40px;
+    border-top: 1px solid #54565a;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @include breakpoint('phone', true) {
+      margin-left: 16px;
+      margin-right: 16px;
+    }
+  }
+  &__item {
+    width: 40%;
+    margin-left: 60px;
+    @include font($size: $fontSize-5 * 1.2, $weight: 600, $height: $lineHeight-2);
+    margin-bottom: 36px;
+    @include breakpoint('notebookBig', true) {
+      font-size: $fontSize-5;
+    }
+    @include breakpoint('phone', true) {
+      font-size: $fontSize-6;
+      width: unset;
+    }
+    @include breakpoint('verticalTablet', true) {
+      font-size: 18px;
+      width: 222px;
+    }
+  }
+  &__name {
+    width: auto;
+    height: auto;
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 12px;
+      left: -60px;
+      width: 40px;
+      height: 4px;
+      content: '';
+      background: #b90c2f;
+    }
+  }
+  &__descriptionWrapp {
+    width: 1834px;
+    margin: auto;
+    @include breakpoint('regularScreen', true) {
+      margin: 60px 48px 84px;
+      width: auto;
+    }
+    @include breakpoint('notebookBig', true) {
+      margin: 60px 40px 84px;
+    }
+    @include breakpoint('additionalTablet', true) {
+      margin: 60px 16px 84px;
+    }
+  }
+  &__description {
+    width: 803px;
+    margin-bottom: 40px;
+    @include breakpoint('notebookBig', true) {
+      margin: 60px 0 84px;
+    }
+    @include breakpoint('phone', true) {
+      width: 100%;
+    }
+  }
+}

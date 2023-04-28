@@ -1,0 +1,143 @@
+@use 'sass:math';
+@use './config' as *;
+
+// placeholder color
+@mixin placeholder($color) {
+  &::placeholder {
+    color: $color;
+    opacity: 1;
+  }
+}
+
+// faster transition
+@mixin faster() {
+  transition-duration: math.div($duration, 2);
+}
+
+// clearfix
+@mixin clearfix() {
+  &:after {
+    display: block;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    content: '';
+  }
+}
+
+@mixin darkOverlay($opacity: 0.1) {
+  &:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: block;
+    content: '';
+    background-color: rgba($color: #000, $alpha: $opacity);
+  }
+}
+
+@mixin fullscreen($fixed: false) {
+  $position: absolute;
+
+  @if ($fixed == true) {
+    $position: fixed;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000;
+    will-change: transform;
+  }
+
+  position: $position;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+// fullsize
+@mixin fullsize() {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// font-face
+@mixin webFont($family, $file, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: $family;
+    font-weight: $weight;
+    font-style: $style;
+    src: url('/fonts/' + $family + '/' + $file + '.ttf') format('truetype');
+  }
+}
+
+// cursor grab
+@mixin cursor-grab() {
+  cursor: move;
+  cursor: grab;
+}
+
+// cursor grabbing
+@mixin cursor-grabbing() {
+  cursor: move;
+  cursor: grabbing;
+}
+
+// cursor default, user-select none
+@mixin without-interaction() {
+  cursor: default;
+  user-select: none;
+}
+
+@mixin without-cursor-interaction() {
+  cursor: none;
+  user-select: none;
+}
+
+// extend default clickable zone
+@mixin clickZone($sizeZone: 10px, $relative: true) {
+  @if ($relative == true) {
+    position: relative;
+  }
+
+  &:before {
+    position: absolute;
+    top: ($sizeZone * -1);
+    right: ($sizeZone * -1);
+    left: ($sizeZone * -1);
+    bottom: ($sizeZone * -1);
+    cursor: pointer;
+    content: '';
+  }
+}
+
+// disable last margin
+@mixin disable-last-margin() {
+  &:last-child {
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+}
+
+@mixin disable-last-margin-right() {
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+@mixin disable-last-margin-bottom() {
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@mixin font($size, $height, $weight: 400, $style: normal) {
+  font-weight: $weight;
+  font-style: $style;
+  font-size: $size;
+  line-height: $height;
+}

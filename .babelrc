@@ -1,0 +1,58 @@
+{
+  "presets": [
+    [
+      "next/babel",
+      {
+        "preset-env": {
+          "useBuiltIns": "usage",
+          "corejs": {
+            "version": 3,
+            "proposals": true
+          }
+        },
+        "class-properties": {}
+      }
+    ]
+  ],
+  "plugins": [
+    [
+      "inline-react-svg",
+      {
+        "svgo": {
+          "plugins": [
+            {
+              "name": "removeAttrs",
+              "removeAttrs": {
+                "attrs": "(data-name)"
+              }
+            },
+            {
+              "name": "cleanupIDs",
+              "cleanupIDs": false
+            }
+          ]
+        }
+      }
+    ],
+    [
+      "module-resolver",
+      {
+        "root": ["./"],
+        "alias": {
+          "components": "./components",
+          "config": "./config",
+          "pages": "./pages",
+          "server": "./server",
+          "store": "./store",
+          "static": "./static",
+          "types": "./types",
+          "constants": "./constants",
+          "@hooks/*": ["hooks/*"],
+          "public": "./public",
+          "assets": "./public/assets",
+          "images": "./public/assets/images"
+        }
+      }
+    ]
+  ]
+}

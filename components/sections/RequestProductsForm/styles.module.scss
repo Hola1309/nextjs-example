@@ -1,0 +1,289 @@
+@use 'styles/common' as *;
+@use 'styles/common/variables' as *;
+
+.RequestProductsForm {
+  margin: 80px 0 0;
+
+  @include breakpoint('notebookBig', true) {
+    margin: 60px 0 0;
+  }
+  &__form {
+    @include breakpoint('phone', true) {
+      width: 100%;
+    }
+  }
+  &__container {
+    background: color('white');
+    padding: 60px 117px 60px 72px;
+    @include breakpoint('verticalTablet', true) {
+      padding: 16px;
+    }
+    @include breakpoint('phone', true) {
+      padding: 0;
+    }
+  }
+
+  &__contentWrap {
+    display: flex;
+    justify-content: space-between;
+    @include breakpoint('verticalTablet', true) {
+      flex-direction: column;
+    }
+    @include breakpoint('phone', true) {
+      padding-top: 40px;
+      flex-direction: column;
+      margin-right: 16px;
+      margin-left: 16px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    position: relative;
+    justify-content: flex-start;
+    padding-bottom: 40px;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    &:last-child {
+      width: 64.5%;
+      padding-bottom: 0;
+    }
+    @include breakpoint('verticalTablet', true) {
+      padding-top: 40px;
+      &:last-child {
+        width: 100%;
+      }
+      @include breakpoint('phone', true) {
+        width: 100%;
+      }
+    }
+    @include breakpoint('phone', true) {
+      padding-bottom: 4px;
+      // align-items: center;
+      flex-direction: column;
+      &:first-child {
+        // width: 64.5%;
+        padding-bottom: 0;
+      }
+      &:last-child {
+        width: 100%;
+        padding-bottom: 0;
+      }
+    }
+    &__description {
+      width: 500px;
+      margin-right: 40px;
+      @include breakpoint('phone', true) {
+        width: 100%;
+        margin-right: 0px;
+      }
+    }
+    &__button {
+      display: flex;
+      margin-top: 40px;
+      margin-right: 40px;
+    }
+    &__buttonWrap {
+      display: flex;
+      font-size: $fontSize-5;
+      text-decoration: underline;
+      svg {
+        margin-right: 20px;
+      }
+    }
+  }
+
+  &__titleWrap {
+    padding-bottom: 24px;
+    margin-bottom: 40px;
+    max-width: 395px;
+    @include breakpoint('verticalTablet', true) {
+      max-width: 490px;
+      margin-bottom: 0px;
+      padding-bottom: 0px;
+    }
+    @include breakpoint('phone', true) {
+      padding-bottom: 0px;
+      margin-bottom: 0px;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    @include breakpoint('verticalTablet', true) {
+      font-size: 32px;
+    }
+    @include breakpoint('phone', true) {
+      font-size: $fontSize-4;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__fields {
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    @include breakpoint('phone', true) {
+      flex-direction: column;
+    }
+  }
+
+  &__input {
+    width: 445px;
+    height: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    border: none;
+    border-bottom: 1px solid color('grey40');
+    flex-grow: 1;
+    margin-right: 40px;
+    padding-bottom: 8px;
+
+    &:nth-child(2) {
+      margin-right: 0;
+    }
+    &:nth-child(4) {
+      margin-right: 0;
+    }
+    @include breakpoint('mediumScreenBig', true) {
+      width: 310px;
+      padding-top: 32px;
+    }
+
+    @include breakpoint('tablet', true) {
+      width: 33%;
+    }
+    @include breakpoint('phone', true) {
+      width: 100%;
+    }
+    &:nth-child(4)::-webkit-file-upload-button {
+      display: none;
+    }
+    &:nth-child(4)::before {
+      content: 'Загрузить файл: ';
+      color: #a9abad;
+      -webkit-user-select: none;
+    }
+  }
+
+  &__input::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: color('grey40');
+    opacity: 1; /* Firefox */
+  }
+
+  &__input:-ms-input-placeholder {
+    color: color('grey40');
+    opacity: 1;
+  }
+
+  &__input::-ms-input-placeholder {
+    color: color('grey40');
+    opacity: 1;
+  }
+
+  &__inputBig::placeholder {
+    color: color('grey40');
+    opacity: 1;
+  }
+
+  &__inputBig:-ms-input-placeholder {
+    color: color('grey40');
+    opacity: 1;
+  }
+
+  &__inputBig::-ms-input-placeholder {
+    color: color('grey40');
+    opacity: 1;
+  }
+
+  &__inputBig {
+    height: 176px;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 12px;
+    margin-top: 32px;
+    border: 1px solid color('grey40');
+    flex-grow: 3;
+    white-space: pre-line;
+    word-break: break-all;
+    @include breakpoint('verticalTablet', true) {
+      width: 100%;
+    }
+    @include breakpoint('phone', true) {
+      margin-right: 40px;
+    }
+  }
+
+  &__checkboxWrap {
+    margin-top: 20px;
+    display: flex;
+  }
+
+  &__checkboxText {
+    max-width: 450px;
+    margin-left: 16px;
+    @include font($size: $fontSize-8 * 1.2, $weight: 400, $height: 150%);
+    color: color('grey40');
+
+    @include breakpoint('notebookBig', true) {
+      font-size: $fontSize-8;
+    }
+  }
+
+  input[type='checkbox'] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    padding: 9px;
+    background-clip: content-box;
+    border: 1px solid color('grey40');
+    background-color: color('white');
+    cursor: pointer;
+    margin: 0;
+
+    &:checked {
+      background: url('/assets/images/icons/v.svg') center no-repeat;
+    }
+
+    &:focus {
+      outline: none !important;
+      padding: 9px;
+    }
+    @include breakpoint('phone', true) {
+      padding: 9px;
+    }
+  }
+
+  &__buttonWrap {
+    text-align: center;
+    margin-top: 36px;
+    width: 390px;
+
+    @include breakpoint('notebookBig', true) {
+      width: 206px;
+    }
+    @include breakpoint('phone', true) {
+      margin-top: 32px;
+      padding-bottom: 40px;
+    }
+  }
+
+  &__button {
+    padding: 12px 60px;
+    width: 390px;
+    background: color('white');
+    letter-spacing: 0.04em;
+
+    @include breakpoint('notebookBig', true) {
+      width: 206px;
+    }
+  }
+  @include breakpoint('phone', true) {
+    margin-top: 0px;
+  }
+}

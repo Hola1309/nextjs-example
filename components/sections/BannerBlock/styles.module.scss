@@ -1,0 +1,62 @@
+@use 'styles/common' as *;
+@use 'styles/common/variables' as *;
+
+.BannerBlock {
+  margin: 85px 0 40px;
+  &__titleWrap {
+    margin-bottom: 30px;
+    @include breakpoint('phone', true) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    @include breakpoint('mediumScreenSmall', true) {
+      max-width: 521px;
+    }
+    @include breakpoint('notebookBig', true) {
+      max-width: 486px;
+    }
+    @include breakpoint('verticalTablet', true) {
+      font-size: 32px;
+      max-width: none;
+    }
+    @include breakpoint('phone', true) {
+      font-size: $fontSize-4;
+    }
+  }
+
+  &__wideTitle {
+    max-width: unset;
+  }
+
+  &__imageWrap {
+    position: relative;
+    width: 100%;
+
+    &:before {
+      display: block;
+      padding-top: 25.276%;
+      content: '';
+    }
+    @include breakpoint('phone', true) {
+      height: 363px;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  @include breakpoint('phone', true) {
+    margin-top: 40px;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-bottom: 0px;
+  }
+}

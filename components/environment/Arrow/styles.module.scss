@@ -1,0 +1,58 @@
+@use 'styles/common' as *;
+
+.Arrow {
+  position: relative;
+  display: flex;
+  width: 42px;
+  height: 30px;
+  cursor: pointer;
+  color: color('primary');
+  border: none;
+  background: color('background');
+  transition: color $duration, background-color $duration, border-color $duration;
+  justify-content: center;
+  align-items: center;
+
+  &_disabled {
+    color: color('grey20');
+  }
+
+  &_white {
+    width: 55px;
+    height: 33px;
+    color: color('white');
+
+    svg {
+      width: 55px;
+      height: 33px;
+    }
+
+    svg > path {
+      fill: color('white');
+    }
+  }
+
+  &_blue {
+    width: 55px;
+    height: 33px;
+    color: color('blue');
+    background: transparent;
+
+    svg {
+      width: 55px;
+      height: 33px;
+    }
+
+    svg > path {
+      fill: color('blue');
+    }
+  }
+
+  svg {
+    display: block;
+  }
+
+  &:hover > svg * {
+    fill: color('blue');
+  }
+}

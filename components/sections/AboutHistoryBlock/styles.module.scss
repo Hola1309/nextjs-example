@@ -1,0 +1,240 @@
+@use 'styles/common' as *;
+@use 'styles/common/variables' as *;
+
+.AboutHistoryBlock {
+  padding-top: 60px;
+  @include breakpoint('notebookBig', true) {
+    margin: 60px 0;
+    padding-top: 60px;
+  }
+  &__titleWrap {
+    border-bottom: 1px solid color('grey80');
+    @include breakpoint('phone', true) {
+      margin-left: 16px;
+      margin-right: 16px;
+    }
+  }
+
+  &__title {
+    padding-bottom: 24px;
+    @include font($size: $fontSize-2 * 1.2, $weight: 600, $height: $lineHeight-5);
+    text-transform: uppercase;
+    cursor: default;
+
+    @include breakpoint('notebookBig', true) {
+      font-size: $fontSize-2;
+    }
+    @include breakpoint('verticalTablet', true) {
+      font-size: 32px;
+    }
+    @include breakpoint('phone', true) {
+      font-size: $fontSize-4;
+      padding-bottom: 16px;
+    }
+  }
+
+  &__contentWrap {
+    @include breakpoint('phone', true) {
+      // margin-left: 16px;
+      // margin-right: 16px;
+    }
+  }
+
+  &__content {
+    vertical-align: top;
+
+    padding-bottom: 43px;
+  }
+
+  &__textWrap {
+    width: 51.581%;
+    margin-right: 66px;
+    margin-top: 100px;
+    margin-left: 108px;
+    @include breakpoint('notebookBig', true) {
+      margin-left: 90px;
+    }
+    @include breakpoint('verticalTablet', true) {
+      margin-left: 0px;
+      margin-top: 0px;
+      width: 100%;
+    }
+    @include breakpoint('phone', true) {
+      margin-left: 0px;
+      margin-top: 0px;
+      width: 100%;
+    }
+  }
+
+  &__subtitle {
+    color: color('blue');
+    margin-bottom: 32px;
+    @include breakpoint('verticalTablet', true) {
+      text-align: center;
+    }
+    @include breakpoint('phone', true) {
+      text-align: center;
+    }
+  }
+
+  &__description {
+    margin-bottom: 36px;
+    max-width: 561px;
+    cursor: default;
+
+    @include breakpoint('notebookBig', true) {
+      max-width: 537px;
+    }
+  }
+
+  &__items {
+    overflow: hidden;
+  }
+
+  &__itemsWrap {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  &__item {
+    width: 100%;
+    display: flex;
+    padding-top: $spacerHeight-8;
+    border-top: 0;
+    border-right: none;
+    border-bottom: 0;
+    flex-shrink: 0;
+    @include breakpoint('verticalTablet', true) {
+      flex-direction: column;
+    }
+    @include breakpoint('phone', true) {
+      flex-direction: column;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+    &:nth-child(1) {
+      img {
+        object-fit: contain;
+      }
+    }
+    &:nth-child(2) {
+      img {
+        object-fit: contain;
+      }
+    }
+    &:nth-child(13) {
+      div {
+        // height: 0px;
+      }
+      img {
+        // display: none;
+        object-fit: contain;
+      }
+    }
+  }
+
+  &__imageWrap {
+    position: relative;
+    width: 48.419%;
+
+    &:before {
+      display: block;
+      padding-top: 66.123%;
+      content: '';
+    }
+    @include breakpoint('verticalTablet', true) {
+      width: 100%;
+      height: 345px;
+    }
+    @include breakpoint('phone', true) {
+      width: 100%;
+      height: 345px;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    @include breakpoint('verticalTablet', true) {
+      object-fit: contain;
+    }
+  }
+
+  &__navigationWrap {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 0 24px;
+    @include breakpoint('verticalTablet', true) {
+      display: none;
+    }
+    @include breakpoint('phone', true) {
+      display: none;
+    }
+  }
+
+  &__navigation {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    &_currentSlide {
+      @include font($size: $fontSize-5, $weight: 600, $height: $lineHeight-1);
+      color: color('primary');
+    }
+
+    &_allSlides {
+      @include font($size: $fontSize-5, $weight: 600, $height: $lineHeight-1);
+      color: color('grey40');
+    }
+  }
+
+  &__arrowWrap {
+    display: flex;
+  }
+
+  &__arrow {
+    &_next {
+      margin-right: -4px;
+    }
+
+    &_disabled {
+      color: color('grey20');
+
+      &:hover {
+        color: color('grey20');
+      }
+    }
+  }
+
+  &__swiper-pagination {
+    width: 100% !important;
+    display: flex;
+    justify-content: space-between;
+    @include breakpoint('phone', true) {
+      display: none;
+    }
+  }
+  &__swiper-pagination-bullet {
+    width: 40px;
+    position: relative;
+    height: 30px;
+    text-align: left;
+    flex-shrink: 0;
+    color: color('grey20');
+    opacity: 1;
+    display: inline-block;
+    left: auto !important;
+  }
+  &__swiper-pagination-bullet-active {
+    color: color('primary');
+  }
+
+  @include breakpoint('phone', true) {
+    margin-top: 20px;
+    padding-top: 0px;
+  }
+}

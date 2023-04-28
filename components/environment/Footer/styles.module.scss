@@ -1,0 +1,233 @@
+@use 'styles/common' as *;
+
+.Footer {
+  background: color('primary');
+  &__container {
+    display: flex;
+    padding-left: 109px;
+    justify-content: space-between;
+    @include breakpoint('phone', true) {
+      flex-direction: column;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+  &__listWrapp {
+    display: flex;
+    justify-content: space-between;
+    @include breakpoint('phone', true) {
+      flex-direction: column;
+    }
+  }
+  &__trademark-listItem {
+    font-size: $fontSize-6;
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 28px;
+    padding-top: 48px;
+    border-bottom: 1px solid color('grey60');
+    @include breakpoint('phone', true) {
+      flex-direction: column;
+      padding: 36px 0px;
+    }
+  }
+
+  &__logo {
+    svg {
+      cursor: pointer;
+    }
+    @include breakpoint('phone', true) {
+      padding-bottom: 36px;
+    }
+  }
+
+  &__list {
+    max-width: 306px;
+    padding-top: 4px;
+    color: color('white');
+    &__grid {
+      padding-top: 48px;
+    }
+    &:last-child {
+      text-align: end;
+    }
+    @include breakpoint('phone', true) {
+      &__grid {
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 233px;
+      }
+      margin-top: 16px;
+    }
+  }
+
+  &__listHeader {
+    display: flex;
+    width: 310px;
+    margin-bottom: 24px;
+    @include font($size: $fontSize-6, $weight: 600, $height: $lineHeight-1);
+    color: color('white');
+    cursor: pointer;
+    transition: color $duration;
+    a {
+      width: 250px;
+    }
+    svg {
+      margin-top: -2px;
+      margin-right: 16px;
+    }
+    &:hover {
+      color: color('grey40');
+    }
+
+    @include breakpoint('notebookBig', true) {
+      font-size: $fontSize-6;
+    }
+    @include breakpoint('phone', true) {
+      font-size: $fontSize-7;
+      margin-bottom: 16px;
+    }
+  }
+  &__listHeaderPhone {
+    display: flex;
+    flex-direction: column;
+    a {
+      padding-bottom: 24px;
+      color: white;
+    }
+  }
+  &__listItem {
+    margin-bottom: 20px;
+    @include font($size: $fontSize-6, $height: $lineHeight-3);
+    color: color('grey40');
+    cursor: pointer;
+    transition: color $duration;
+
+    &:hover {
+      color: color('white');
+    }
+
+    @include breakpoint('notebookBig', true) {
+      font-size: $fontSize-7;
+    }
+    @include breakpoint('phone', true) {
+      font-size: $fontSize-8;
+      margin-bottom: 12px;
+    }
+  }
+
+  &__email {
+    margin-bottom: 8px;
+    @include font($size: $fontSize-6, $weight: 500, $height: $lineHeight-4);
+    cursor: pointer;
+    transition: $easeInOutSine 400ms;
+
+    &:hover {
+      color: color('white');
+      text-decoration: underline;
+    }
+
+    @include breakpoint('notebookBig', true) {
+      font-size: $fontSize-7;
+    }
+  }
+
+  &__phone {
+    margin-bottom: 32px;
+    @include font($size: $fontSize-6, $weight: 600, $height: $lineHeight-1);
+
+    cursor: pointer;
+    transition: $easeInOutSine 400ms;
+
+    div:first-child {
+      &:hover {
+        color: color('white');
+        text-decoration: underline;
+      }
+    }
+    div:last-child {
+      &:hover {
+        color: color('white');
+        text-decoration: underline;
+      }
+    }
+    @include breakpoint('notebookBig', true) {
+      font-size: $fontSize-6;
+    }
+    @include breakpoint('phone', true) {
+      font-size: $fontSize-5;
+    }
+  }
+  &__address {
+    @include font($size: $fontSize-6, $weight: 500, $height: $lineHeight-3);
+    cursor: default;
+
+    @include breakpoint('notebookBig', true) {
+      font-size: $fontSize-7;
+    }
+    @include breakpoint('phone', true) {
+      font-size: $fontSize-8;
+    }
+  }
+
+  &__trademarkWrapper {
+    width: 777px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 36px;
+    padding-bottom: 28px;
+    padding-top: 28px;
+    border-top: 1px solid #7f8083;
+
+    @include breakpoint('phone', true) {
+      width: 100%;
+      flex-direction: column;
+      padding-bottom: 9px;
+    }
+  }
+
+  &__trademark {
+    color: color('grey40');
+    &-listItem {
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: color $duration;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &:hover {
+        color: color('white');
+        text-decoration: underline;
+      }
+      &NoHover {
+        cursor: default;
+        &:hover {
+          color: color('grey40');
+          text-decoration: unset;
+        }
+      }
+    }
+
+    &-listLogoWrap {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 24px;
+      @include breakpoint('phone', true) {
+        justify-content: unset;
+      }
+    }
+
+    &-listLogo {
+      margin-left: 20px;
+    }
+    @include breakpoint('phone', true) {
+      font-size: $fontSize-8;
+      margin-bottom: 36px;
+    }
+  }
+}

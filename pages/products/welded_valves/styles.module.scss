@@ -1,0 +1,16 @@
+@use 'styles/common' as *;
+
+.MainProductsBlock__item {
+  margin-top: 40px;
+  display: flex;
+  margin-bottom: 120px;
+  @include breakpoint('phone', true) {
+    flex-direction: column;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+}
+.MainPage {
+  position: relative;
+  color: color('primary');
+}
